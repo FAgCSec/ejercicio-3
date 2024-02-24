@@ -1,0 +1,17 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var formulario = document.getElementById('formulario');
+    var nombreInput = document.getElementById('nombre');
+    var errorNombre = document.getElementById('errorNombre');
+
+    formulario.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar el envío del formulario por defecto
+
+        if (nombreInput.value.length < 3) {
+            errorNombre.textContent = 'El nombre debe tener al menos 3 caracteres.';
+        } else {
+            errorNombre.textContent = ''; // Limpiar mensaje de error
+            // Aquí podrías enviar el formulario si la validación es exitosa
+            alert('Formulario enviado correctamente con el nombre: ' + nombreInput.value);
+        }
+    });
+});
